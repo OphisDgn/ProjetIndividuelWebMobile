@@ -1,0 +1,24 @@
+{
+    "name": "Projet individuel - LIEUTAUD Céline",
+    "short_name": "CL ProjetIndi",
+    "start_url": "/",
+    "display": "standalone",
+    "icons": [
+    {
+        "src": "img/logo.png",
+        "sizes": "50x50",
+        "type": "image/png"
+    },
+    {
+        "src": "img/logos/144x144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+    }
+    ],
+    "related_applications": [
+    {
+        "platform": "web"
+    }
+    ]
+}
+  
