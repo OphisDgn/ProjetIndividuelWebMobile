@@ -7,7 +7,7 @@ var app = {
 };
 app.initialize();
 
-
+/** FUNCTIONS */
 
 // return to home page
 function returnHome() {
@@ -27,7 +27,6 @@ function onClickFunction(elem) {
   if ($(elem).attr("data-oid")) {
     let OID = $(elem).attr("data-oid");
     localStorage.setItem("detailTop", OID);
-  
     $("#detailTopic").html("");
   
     divs.forEach((div, i) => {
@@ -36,7 +35,11 @@ function onClickFunction(elem) {
         div.removeClass("hidden");
       }
     });
-    callFetchDetail();
+    if (OID > 2) {
+      fetchOneLocalStorage();
+    } else {
+      callFetchDetail();
+    }
   }
   else {
     divs.forEach((div, i) => {
@@ -51,43 +54,50 @@ function onClickFunction(elem) {
 // add top 
 function addTop() {
   const title = $('#title_top').val();
-
   let tmp = JSON.parse(localStorage.getItem("Datas"));
-  let Count = tmp.length;
-
+  let Count = tmp.length + 1;
+  let item1name = $('#item1name').val();
+  let item1url = $('#item1url').val();
+  let item2name = $('#item2name').val();
+  let item2url = $('#item2url').val();
+  let item3name = $('#item3name').val();
+  let item3url = $('#item3url').val();
+  let item4name = $('#item4name').val();
+  let item4url = $('#item4url').val();
+  let item5name = $('#item5name').val();
+  let item5url = $('#item5url').val();
+ 
   let Top = `
   { 
     "id": "${Count}",
     "title": "${title}",
     "items": [
       {
-        "name": "1Name",
-        "url": "1Url"
+        "name": "${item1name}",
+        "url": "${item1url}"
       },
       {
-        "name": "2Name",
-        "url": "2Url"
+        "name": "${item2name}",
+        "url": "${item2url}"
       },
       {
-        "name": "3Name",
-        "url": "3Url"
+        "name": "${item3name}",
+        "url": "${item3url}"
       },
       {
-        "name": "4Name",
-        "url": "4Url"
+        "name": "${item4name}",
+        "url": "${item4url}"
       },
       {
-        "name": "5Name",
-        "url": "5Url"
-      },
+        "name": "${item5name}",
+        "url": "${item5url}"
+      }
     ]
   }`;
-  
-  for(var i = 1; i < 6; i++) {
-    Top
-    .replace(i + "Name", $('#item'+ i + "_name"))
-    .replace(i + "Url", $('#item'+ i + "_url"))
-  }
   tmp.push(JSON.parse(Top));
-  localStorage.setItem("Datas", tmp);
+
+  localStorage.setItem("Datas", JSON.stringify(tmp));
+  $('.form-control').val('');
+  fetchLocalStorageDone();
+  returnHome();
 }

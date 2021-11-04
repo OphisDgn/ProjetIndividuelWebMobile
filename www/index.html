@@ -13,13 +13,18 @@
         <link rel="manifest" href="./manifest.json"/>
         <script>
             window.addEventListener("load", () => {
-              if ("serviceWorker" in navigator) {
-                navigator.serviceWorker
-                  .register("sw.js", { scope: "./" })
-                  .then(function (reg) {});
-              }
+                if ("cordova" in window) {
+                } else {
+                    if ("serviceWorker" in navigator) {
+                        navigator.serviceWorker
+                        .register("sw.js", { scope: "./" })
+                        .then(function (reg) {});
+                    }
+                }
             });
-          </script>
+        </script>
+          
+        <script src="cordova.js"></script>
         <title>Projet individuel - LIEUTAUD Céline</title>
     </head>
     <body>
@@ -80,11 +85,11 @@
                                 <label>Item 1 : </label>
                             </div>
                             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                <input type="text" class="form-control" id="item1_name" placeholder="Nom"/>
+                                <input type="text" class="form-control" id="item1name" placeholder="Nom"/>
                             </div>
                             <div class="col-lg-1 col-md-1"></div>
                             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                <input type="text" class="form-control" id="item1_url" placeholder="Url de l'image"/>
+                                <input type="text" class="form-control" id="item1url" placeholder="Url de l'image"/>
                             </div>
                         </div>
     
@@ -93,11 +98,11 @@
                                 <label>Item 2 : </label>
                             </div>
                             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                <input type="text" class="form-control" id="item2_name" placeholder="Nom"/>
+                                <input type="text" class="form-control" id="item2name" placeholder="Nom"/>
                             </div>
                             <div class="col-lg-1 col-md-1"></div>
                             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                <input type="text" class="form-control" id="item2_url" placeholder="Url de l'image"/>
+                                <input type="text" class="form-control" id="item2url" placeholder="Url de l'image"/>
                             </div>
                         </div>
     
@@ -106,11 +111,11 @@
                                 <label>Item 3 : </label>
                             </div>
                             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                <input type="text" class="form-control" id="item3_name" placeholder="Nom"/>
+                                <input type="text" class="form-control" id="item3name" placeholder="Nom"/>
                             </div>
                             <div class="col-lg-1 col-md-1"></div>
                             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                <input type="text" class="form-control" id="item3_url" placeholder="Url de l'image"/>
+                                <input type="text" class="form-control" id="item3url" placeholder="Url de l'image"/>
                             </div>
                         </div>
 
@@ -119,24 +124,24 @@
                                 <label>Item 4 : </label>
                             </div>
                             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                <input type="text" class="form-control" id="item4_name" placeholder="Nom"/>
+                                <input type="text" class="form-control" id="item4name" placeholder="Nom"/>
                             </div>
                             <div class="col-lg-1 col-md-1"></div>
                             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                <input type="text" class="form-control" id="item4_url" placeholder="Url de l'image"/>
+                                <input type="text" class="form-control" id="item4url" placeholder="Url de l'image"/>
                             </div>
                         </div>
                         
                         <div class="input-group">
-                            <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+                            <div class="col-lg-1 col-md-2 col-sm-12 col-xs-12">
                                 <label>Item 5 : </label>
                             </div>
                             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                <input type="text" class="form-control" id="item5_name" placeholder="Nom"/>
+                                <input type="text" class="form-control" id="item5name" placeholder="Nom"/>
                             </div>
                             <div class="col-lg-1 col-md-1"></div>
                             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                <input type="text" class="form-control" id="item5_url" placeholder="Url de l'image"/>
+                                <input type="text" class="form-control" id="item5url" placeholder="Url de l'image"/>
                             </div>
                         </div>
 
@@ -148,7 +153,6 @@
             </div>
 
         </main>
-        <script src="cordova.js"></script>
         <script src="js/index.js"></script>
         <script src="js/jquery-3.6.0.min.js"></script>
         <script src="js/top.js"></script>

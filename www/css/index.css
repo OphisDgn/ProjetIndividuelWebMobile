@@ -98,6 +98,14 @@ h1 {
     right: 20px;
 }
 
+.rowDetail {
+    margin: 20px 0px;
+}
+
+.card-img-top {
+    width: 60% !important;
+}
+
 .form-control {
     margin: 5px 0px;
 }
@@ -106,6 +114,7 @@ h1 {
 .containerBtnLoad {
     position: relative;
 }
+
 .btnLoad {
     width: 150px;
     position: absolute;
