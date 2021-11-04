@@ -116,7 +116,7 @@ h1 {
 }
 
 .btnLoad {
-    width: 150px;
+    width: auto;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);

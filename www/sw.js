@@ -1,6 +1,6 @@
 /** VARS */
 const ORIGIN_URL = `${location.protocol}//${location.host}`;
-const CACHE_NAME = "offline";
+const CACHE_NAME = "offline-v2";
 const OFFLINE_URL = "offline.html";
 const CACHED_FILES = [
   OFFLINE_URL,
@@ -11,7 +11,8 @@ const CACHED_FILES = [
   `${ORIGIN_URL}/js/top.js`,
   `${ORIGIN_URL}/js/jquery-3.6.0.min.js`,
   `${ORIGIN_URL}/data/data.json`,
-  `${ORIGIN_URL}/img/logo.png`
+  `${ORIGIN_URL}/img/logo.png`,
+  `${ORIGIN_URL}/img/logos/144x144.png`
 ];
 /** FUNCTIONS */
 

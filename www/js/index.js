@@ -22,6 +22,7 @@ function returnHome() {
 
 // show detail's top
 function onClickFunction(elem) {
+  navigator.vibrate(2000);
   const divs = [$("#list"), $("#detail"), $("#create")];
 
   if ($(elem).attr("data-oid")) {
